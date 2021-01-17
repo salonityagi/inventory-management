@@ -1,0 +1,67 @@
+server:
+ port: 8085
+
+security:
+   oauth2:
+      resource:
+         filter-order: 3
+spring:
+  profiles:
+    active: dev
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: sa
+  
+  jpa:
+     database-platform: org.hibernate.dialect.H2Dialect
+  h2:
+     console:
+        enabled: true
+  servlet:
+     multipart:
+        max-file-size: 1024KB
+        max-request-size: 1024KB
+  http:
+     multipart:
+        enabled: true
+
+auth:
+ private: "-----BEGIN RSA PRIVATE KEY-----\
+MIIEpAIBAAKCAQEAxgToHyodCs1tMHKWCI2i9/nOQO9DCQ8+T3EZPcDNM9QLhvpN\
+Mpb82NBEW1IiRIxJzJ6y5uxmjQWcaEtyC50ZB3lFx0h/+5uM9uQU/nTjMpeAqRJa\
+S1LnOrYD4VT146g9JYgTZ8KxR7TR8DbqdEMid1CRoMmZgAXDPlVdGetRObYPlHrH\
+vRb7NJTelRS6teWLNz0v9F23rTQ7GtxB58KCt0urv0NFO+Ml/0bVJjLNqcjjTLrz\
+zQBmepjAsWVnQX6L+/REpGaUcWv6AJxX+Vg1T6wtOF/Me4ullbnOKUBnUjfI6KCc\
+zs+saUqIGNedn0KMon4cQNZJxQA7oLGF4KL3jwIDAQABAoIBAF/IvdNdVqEED14Q\
+/1vxzzPuJQOp+J4oPnbE+XWyjlAUsOLArpjbCkGCNJ6L00GfLo+I8HbdQRnT7f1R\
+CUBu5E2GLuefvTCi5IQEfdc8CS5OtJCT7RNkba8rniLgKvTNS46dDO3y8jgCUk7E\
+8ZH9a22VjmvdOKABqZi8SAWimy6zdTG9wFxTF6kCD6nOpXysmlJ7/201QsQSLI4A\
+GWnPO/s9p1M89qfoOWcr1kaYqtDe4cFqLeZAFPs0XzXKnMmLyII/l2SNambze5t6\
+PP8QDVIggSCNHW9uUAzYso+vUFAFpckzhBfrxcaWToh3TSfIlYXK+/EyQFDrIsyY\
+P9W7qMkCgYEA7DqHoGqy//RUgrmE0N8MINLXJyvku/I/CwIEg7ZPlWxVB4SpyNpQ\
+hmFgCK70Uq1kT2KOPYHHuSTLsEgOt+VWepQ4HQClOosxK67HfWIAq1TXkg1Aak05\
+fSRcm2QWAgQbLgcwed+H7EUYsSGsTlRdzay+jA79eNxHmMbATyoR03UCgYEA1pex\
+97uJkqQGoUqfE6bASvpbcKXfLayf00St2irSY3kockRWEqRl6k/C8rlLLgXBOPE9\
+v66fUHLvNjxPse9Nh5K2NMTqJhOAa4ApXiVfZsDTbuHYDZov00kuwMpFMrvhuGfc\
+EAKnhRMZKP9wlYQaJ47rX+8wyTIVRZ9Uh8Af0nMCgYBvk9m52IwBv3snX88vBRtq\
+aYv8UYwxheNnJKXTPIpsjoW/DldPqmZ8goPkthZq8sE9idSbkrAucAXRlsd07tsg\
+/N9gO4zPkS1Bb8WEIIUmZ+WGc8HoM9+ij0k6kFSg0SWxYO3xsrY10BEwoTIMsWa5\
+Hg3Gg9IPgyRCMiZlff57fQKBgQC9cgRCYUTNuZLE17ziO2ctiiIpq7YAe5JJkCsv\
+HHjKKo8DecLHCG2U0r+XSu/M/HWdkJPj4gRxoFYAenQc8NdwJZxHr8PKw5Ku1OEw\
+ZSv46ah/DlCPiZxJGiV1O9ylMmrOQpprY/yCJd8ja4b36DyyyaCP+/kE1fsjkMqu\
+YXV2cwKBgQCrn7oj+PQ8+QhINOBM1Fjm/1qVxFwwZvcre+/LGVcQrcWQH9jeA/t1\
+K7gyU+eBHNmAV0yJoyTSKZ/HlFAFkY0qjeCklBkdXtvZ8FuOUUlADh4lO9Axtc4/\
+3hFyVQpftvLvEA3UNLxtu89Gkm7qd3n8aURX9zOAZ+gXJ8kms65Iww==\
+-----END RSA PRIVATE KEY-----"
+ public: "-----BEGIN PUBLIC KEY-----\
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxgToHyodCs1tMHKWCI2i\
+9/nOQO9DCQ8+T3EZPcDNM9QLhvpNMpb82NBEW1IiRIxJzJ6y5uxmjQWcaEtyC50Z\
+B3lFx0h/+5uM9uQU/nTjMpeAqRJaS1LnOrYD4VT146g9JYgTZ8KxR7TR8DbqdEMi\
+d1CRoMmZgAXDPlVdGetRObYPlHrHvRb7NJTelRS6teWLNz0v9F23rTQ7GtxB58KC\
+t0urv0NFO+Ml/0bVJjLNqcjjTLrzzQBmepjAsWVnQX6L+/REpGaUcWv6AJxX+Vg1\
+T6wtOF/Me4ullbnOKUBnUjfI6KCczs+saUqIGNedn0KMon4cQNZJxQA7oLGF4KL3\
+jwIDAQAB\
+-----END PUBLIC KEY-----"
+     

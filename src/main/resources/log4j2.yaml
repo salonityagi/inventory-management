@@ -1,0 +1,39 @@
+Configutation:
+  name: Default
+  Properties:
+    Property:
+      name: log-path
+      value: "/logs"
+  Appenders:
+    Console:
+      name: Console_Appender
+      target: SYSTEM_OUT
+      PatternLayout:
+        pattern: "[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n"
+    RollingFile:
+      - name: RollingFile_Appender
+        fileName: ${log-path}/spring-logs.log
+        filePattern: "${log-path}/spring-logs.log.%d{yyyy-MM-dd-hh-mm}.gz"
+        PatternLayout:
+          pattern: "[%d{yyy-MM-dd HH:mm:ss:SSS}] [%X{X-B3-TraceId},%X{X-B3-SpanId},%X{X-B3-ParentSpanId},%X{X-Span-Export}] [%p] - %l - %m%n"
+        JsonLayout:
+          complete: true
+          compact: true  
+          objectMessageAsJsonObject: true
+        Policies:
+          SizeBasedTriggeringPolicy:
+            size: 1 MB
+        DefaultRollOverStrategy:
+          max: 30
+  Loggers:
+      Root:
+        level: info
+        AppenderRef:
+          - ref: Console_Appender
+      Logger:
+        - name: sl.ms.invent.logger
+          additivity: false
+          level: info
+          AppenderRef:
+            - ref: RollingFile_Appender
+              level: info
