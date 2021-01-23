@@ -13,7 +13,7 @@ Configutation:
     RollingFile:
       - name: RollingFile_Appender
         fileName: ${log-path}/spring-logs.log
-        filePattern: "${log-path}/spring-logs.log.%d{yyyy-MM-dd-hh-mm}.gz"
+        filePattern: "${log-path}/inventory-management-logs.log.%d{yyyy-MM-dd-hh-mm}.gz"
         PatternLayout:
           pattern: "[%d{yyy-MM-dd HH:mm:ss:SSS}] [%X{X-B3-TraceId},%X{X-B3-SpanId},%X{X-B3-ParentSpanId},%X{X-Span-Export}] [%p] - %l - %m%n"
         JsonLayout:

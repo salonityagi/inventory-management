@@ -37,7 +37,7 @@ public class InventoryLogger extends StringMapMessage{
 		} catch (JsonProcessingException e) {
 			e.printStackTrace();
 		}
-		LOGGER.info("cloud sleuth testing");
+		LOGGER.info("cloud sleuth trace log..");
 		LOGGER.info(getData());
 	}
 	

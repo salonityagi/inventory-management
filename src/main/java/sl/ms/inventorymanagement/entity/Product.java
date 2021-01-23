@@ -52,4 +52,15 @@ public class Product {
 	public void setProdId(int prodId) {
 		this.prodId = prodId;
 	}
+
+	public boolean equals(Product obj) {
+		return this.Id==(obj.getId());
+	}
+
+	@Override
+	public String toString() {
+		return "Product{" +
+				"Id=" + Id +
+				'}';
+	}
 }
